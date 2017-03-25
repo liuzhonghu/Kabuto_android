@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="tab_style" >
+        <attr name="titleBarBackground" format="color"/>
+        <attr name="titleBarTextColor" format="color"/>
+        <attr name="backTint" format="color"/>
+        <attr name="titleBarHeight" format="dimension"/>
+        <attr name="tabTitleTextSize" format="dimension"/>
+        <attr name="tabButtonTextSize" format="dimension"/>
+    </declare-styleable>
+</resources>

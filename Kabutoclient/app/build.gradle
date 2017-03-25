@@ -1,0 +1,98 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '23.0.3'
+    defaultConfig {
+        applicationId "com.nec.kabutoclient"
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.0"
+    }
+    signingConfigs {
+        kratosConfig {
+            storeFile file("kabuto.keystore")
+            storePassword "liu123.hu"
+            keyAlias "kabuto"
+            keyPassword "liu123.hu"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets.main {
+        manifest.srcFile 'src/main/AndroidManifest.xml'
+        java.srcDirs = ['src/main/java', 'src/main/java-gen']
+        res.srcDirs = ['src/main/res']
+        jniLibs.srcDirs = ['libs']
+    }
+    compileOptions {
+        productFlavors {
+            kabuto {}
+        }
+
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith(".apk")) {
+                def apkName = "kabuto-" + variant.productFlavors[0].name + "-" + defaultConfig.versionName + ".apk"
+                output.outputFile = new File(outputFile.parent, apkName)
+            }
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+        incremental true
+        preDexLibraries = false
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.jakewharton:butterknife:8.2.1'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+    compile 'com.google.dagger:dagger:2.5'
+    apt 'com.google.dagger:dagger-compiler:2.5'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.annimon:stream:1.0.9'
+}
