@@ -1,58 +1,59 @@
 package com.nec.kabutoclient.util;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.text.TextUtils;
 
 import com.annimon.stream.Stream;
 import com.google.gson.Gson;
 import com.nec.kabutoclient.data.response.User;
 import com.nec.kabutoclient.data.response.UserAccount;
 import com.nec.kabutoclient.data.response.UserDetailInfo;
+import com.nec.kabutoclient.data.sp.AppConfig;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
 
 /**
  * 保存用户基础信息
- * Date: 2016-05-24
- * Time: 13:46
  */
 public class UserService {
-  private static final String USER_DETAIL = "user_detail";
-  private static final String USER = "user";
-  private int grade;
-  private UserDetailInfo detailInfo;
-  private User user;
-  private UserAccount userAccount;
-  private static Gson gson;
-  private static UserService userInfoService;
-  private List<WeakReference<Observer<User>>> userObserversReference;
-  private List<WeakReference<Observer<UserAccount>>> userAccountObserversReference;
-  private List<WeakReference<Observer<UserDetailInfo>>> userDetailObserversReference;
+    private static final String USER_DETAIL = "user_detail";
+    private static final String USER = "user";
+    private int grade;
+    private UserDetailInfo detailInfo;
+    private User user;
+    private UserAccount userAccount;
+    private static Gson gson;
+    private static UserService userInfoService;
+    private List<WeakReference<Observer<User>>> userObserversReference;
+    private List<WeakReference<Observer<UserAccount>>> userAccountObserversReference;
+    private List<WeakReference<Observer<UserDetailInfo>>> userDetailObserversReference;
 
-  public synchronized static UserService getInstance() {
-    if (userInfoService == null) {
-      userInfoService = new UserService();
+    public synchronized static UserService getInstance() {
+        if (userInfoService == null) {
+            userInfoService = new UserService();
+        }
+        getGson();
+        return userInfoService;
     }
-    getGson();
-    return userInfoService;
-  }
 
-  private static Gson getGson() {
-    if (gson == null) {
-      gson = new Gson();
+    private static Gson getGson() {
+        if (gson == null) {
+            gson = new Gson();
+        }
+        return gson;
     }
-    return gson;
-  }
 
-  public interface Observer<T> {
-    void update(T t);
-  }
+    public interface Observer<T> {
+        void update(T t);
+    }
 
-  public void saveUserAccount(@NonNull UserAccount userAccount) {
-    if (userAccount == null) {
-      throw new NullPointerException(
-        "userAccount is not null,if you clear this,please call clearUserAccount()");
-    } else {
+    public void saveUserAccount(@NonNull UserAccount userAccount) {
+        if (userAccount == null) {
+            throw new NullPointerException(
+                    "userAccount is not null,if you clear this,please call clearUserAccount()");
+        } else {
 //      this.userAccount = userAccount;
 //      detailInfo = getUserDetailInfo();
 //      if (detailInfo != null) {
@@ -67,8 +68,8 @@ public class UserService {
 //          }
 //        });
 //      }
+        }
     }
-  }
 
 //  @Nullable
 //  public UserAccount getUserAccount() {
@@ -83,23 +84,23 @@ public class UserService {
 //    return null;
 //  }
 
-  public void clearUserAccount() {
-    if (userAccountObserversReference != null && !userAccountObserversReference.isEmpty()) {
+    public void clearUserAccount() {
+        if (userAccountObserversReference != null && !userAccountObserversReference.isEmpty()) {
 //      Stream.of(userAccountObserversReference).forEach(value -> {
 //        Observer<UserAccount> userAccountObserver = value.get();
 //        if (userAccountObserver != null) {
 //          userAccountObserver.update(null);
 //        }
 //      });
-    }
+        }
 //    this.userAccount = null;
 //    if (this.detailInfo != null) {
 //      detailInfo.setUserAccount(null);
 //      saveUserDetail(detailInfo);
 //    }
-  }
+    }
 
-  public void saveUser(@NonNull User user) {
+    public void saveUser(@NonNull User user) {
 //    if (user == null) {
 //      throw new NullPointerException("user is not null,if you reset this,please call clearUser()");
 //    } else {
@@ -110,10 +111,10 @@ public class UserService {
 //      }
 //      if (userObserversReference != null && !userObserversReference.isEmpty()) {
         Stream.of(userObserversReference).forEach(value -> {
-          Observer<User> userAccountObserver = value.get();
-          if (userAccountObserver != null) {
-            userAccountObserver.update(user);
-          }
+            Observer<User> userAccountObserver = value.get();
+            if (userAccountObserver != null) {
+                userAccountObserver.update(user);
+            }
         });
 //      }
 //      ThreadPool.execute(() -> {
@@ -121,30 +122,30 @@ public class UserService {
 //        Config.saveString(USER_DETAIL, getGson().toJson(detailInfo));
 //      });
 //    }
-  }
+    }
 
-//  @Nullable
-//  public User getUser() {
-//    if (user != null) {
-//      return user.clone();
-//    } else {
-//      user = getLocalUser();
-//      if (user != null) {
-//        return user.clone();
-//      }
-//      return null;
-//    }
-//  }
+    @Nullable
+    public User getUser() {
+        if (user != null) {
+            return user.clone();
+        } else {
+            user = getLocalUser();
+            if (user != null) {
+                return user.clone();
+            }
+            return null;
+        }
+    }
 
-//  @Nullable
-//  public User getLocalUser() {
-//    String userJson = Config.getString(USER);
-//    if (TextUtils.isEmpty(userJson)) {
-//      return null;
-//    } else {
-//      return getGson().fromJson(userJson, User.class);
-//    }
-//  }
+    @Nullable
+    public User getLocalUser() {
+        String userJson = AppConfig.getString(USER);
+        if (TextUtils.isEmpty(userJson)) {
+            return null;
+        } else {
+            return getGson().fromJson(userJson, User.class);
+        }
+    }
 //
 //  public void clearUser() {
 //    if (userObserversReference != null && !userObserversReference.isEmpty()) {

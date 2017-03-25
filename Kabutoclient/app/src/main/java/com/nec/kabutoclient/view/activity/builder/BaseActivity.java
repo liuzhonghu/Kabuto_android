@@ -1,4 +1,4 @@
-package com.nec.kabutoclient.view.activity;
+package com.nec.kabutoclient.view.activity.builder;
 
 import android.support.v4.app.FragmentActivity;
 

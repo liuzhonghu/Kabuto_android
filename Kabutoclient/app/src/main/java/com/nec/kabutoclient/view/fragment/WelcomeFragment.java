@@ -10,6 +10,7 @@ import com.nec.kabutoclient.R;
 import com.nec.kabutoclient.di.components.DaggerWelcomeFragmentComponent;
 import com.nec.kabutoclient.di.modules.WelcomeFragmentModule;
 import com.nec.kabutoclient.presenter.WelcomeFragmentPresenter;
+import com.nec.kabutoclient.view.fragment.builder.BaseFragment;
 import com.nec.kabutoclient.view.impl.IWelcomeView;
 
 import javax.inject.Inject;

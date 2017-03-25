@@ -13,6 +13,8 @@ public class KabutoApplication extends Application {
 
     private static Context context;
     public static boolean isColdStart;
+    private static String maleName;
+    private static String femaleName;
 
     @Override
     public void onCreate() {
@@ -20,6 +22,8 @@ public class KabutoApplication extends Application {
         context = this;
         isColdStart = false;
 
+        maleName = getResources().getString(R.string.male);
+        femaleName = getResources().getString(R.string.female);
     }
 
     public static Context getAppContext() {
@@ -37,5 +41,17 @@ public class KabutoApplication extends Application {
 //    public static User getUserData() {
 //        return UserService.getInstance().getUser();
 //    }
+
+    public static void setGenderName(String[] gendeNames) {
+        if (gendeNames != null && gendeNames.length >= 2) {
+            String newMaleName = gendeNames[0];
+            String newFemaleName = gendeNames[1];
+            if (!newMaleName.equals(maleName) || !newFemaleName.equals(femaleName)) {
+                maleName = newMaleName;
+                femaleName = newFemaleName;
+//                EventBus.getDefault().post(new GenderTextChangeEvent());
+            }
+        }
+    }
 
 }

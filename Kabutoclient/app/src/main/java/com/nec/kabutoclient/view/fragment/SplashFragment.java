@@ -10,6 +10,7 @@ import com.nec.kabutoclient.R;
 import com.nec.kabutoclient.di.components.DaggerSplashFragmentComponent;
 import com.nec.kabutoclient.di.modules.SplashFragmentModule;
 import com.nec.kabutoclient.presenter.SplashFragmentPresenter;
+import com.nec.kabutoclient.view.fragment.builder.BaseFragment;
 import com.nec.kabutoclient.view.impl.ISplashView;
 
 import javax.inject.Inject;

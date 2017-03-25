@@ -6,6 +6,7 @@ buildscript {
     dependencies {
         classpath 'me.tatarka:gradle-retrolambda:3.2.5'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath "io.realm:realm-gradle-plugin:2.0.2"
     }
 }
 
@@ -19,6 +20,7 @@ repositories {
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 24
@@ -88,6 +90,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:recyclerview-v7:24.0.0'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.jakewharton:butterknife:8.2.1'
     apt 'com.jakewharton:butterknife-compiler:8.2.1'
@@ -95,4 +98,12 @@ dependencies {
     apt 'com.google.dagger:dagger-compiler:2.5'
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.annimon:stream:1.0.9'
+    compile 'com.facebook.rebound:rebound:0.3.8'
+    compile('com.facebook.fresco:fresco:0.11.0') {
+        exclude group: 'com.nineoldandroids', module: 'library'
+    }
+    compile 'com.facebook.fresco:animated-base-support:0.11.0'
+    compile 'com.facebook.fresco:animated-gif:0.11.0'
+    compile 'com.facebook.fresco:imagepipeline-okhttp3:0.11.0'
+    compile 'com.facebook.fresco:webpsupport:0.11.0'
 }

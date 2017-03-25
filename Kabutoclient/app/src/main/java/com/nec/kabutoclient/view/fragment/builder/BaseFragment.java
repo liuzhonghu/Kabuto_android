@@ -1,4 +1,4 @@
-package com.nec.kabutoclient.view.fragment;
+package com.nec.kabutoclient.view.fragment.builder;
 
 import android.app.Fragment;
 
