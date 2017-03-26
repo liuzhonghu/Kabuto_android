@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nec.kabutoclient.R;
-import com.nec.kabutoclient.di.components.DaggerWelcomeFragmentComponent;
-import com.nec.kabutoclient.di.modules.WelcomeFragmentModule;
 import com.nec.kabutoclient.presenter.WelcomeFragmentPresenter;
 import com.nec.kabutoclient.view.fragment.builder.BaseFragment;
 import com.nec.kabutoclient.view.impl.IWelcomeView;
@@ -43,8 +41,8 @@ public class WelcomeFragment extends BaseFragment implements IWelcomeView {
     }
 
     private void initViewData() {
-        DaggerWelcomeFragmentComponent.builder().welcomeFragmentModule(new WelcomeFragmentModule(this))
-                .build().inject(this);
+//        DaggerWelcomeFragmentComponent.builder().welcomeFragmentModule(new WelcomeFragmentModule(this))
+//                .build().inject(this);
 
     }
 

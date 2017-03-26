@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nec.kabutoclient.R;
-import com.nec.kabutoclient.di.components.DaggerSplashFragmentComponent;
-import com.nec.kabutoclient.di.modules.SplashFragmentModule;
 import com.nec.kabutoclient.presenter.SplashFragmentPresenter;
 import com.nec.kabutoclient.view.fragment.builder.BaseFragment;
 import com.nec.kabutoclient.view.impl.ISplashView;
@@ -43,8 +41,8 @@ public class SplashFragment extends BaseFragment implements ISplashView {
     }
 
     private void initViewData() {
-        DaggerSplashFragmentComponent.builder().splashFragmentModule(new SplashFragmentModule(this))
-                .build().inject(this);
+//        DaggerSplashFragmentComponent.builder().splashFragmentModule(new SplashFragmentModule(this))
+//                .build().inject(this);
     }
 
     private void addListener() {

@@ -12,10 +12,37 @@ import io.realm.annotations.PrimaryKey;
 public class RealmUser extends RealmObject implements Cloneable {
     @PrimaryKey
     private int userId;
+    private String userName;
+    private String avatar;
 
 
-    public RealmUser(int userId) {
+    public RealmUser(int userId, String userName, String avatar) {
+        this.userId = userId;
+        this.userName = userName;
+        this.avatar = avatar;
+    }
 
+    public RealmUser() {
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public int getUserId() {
@@ -24,14 +51,38 @@ public class RealmUser extends RealmObject implements Cloneable {
 
     public static final class Builder {
         private int userId;
+        private String userName;
+        private String avatar;
 
         public Builder setUserId(int userId) {
             this.userId = userId;
             return this;
         }
 
+        public int getUserId() {
+            return userId;
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public Builder setUserName(String userName) {
+            this.userName = userName;
+            return this;
+        }
+
+        public String getAvatar() {
+            return avatar;
+        }
+
+        public Builder setAvatar(String avatar) {
+            this.avatar = avatar;
+            return this;
+        }
+
         public RealmUser build() {
-            return new RealmUser(userId);
+            return new RealmUser(userId, userName, avatar);
         }
     }
 

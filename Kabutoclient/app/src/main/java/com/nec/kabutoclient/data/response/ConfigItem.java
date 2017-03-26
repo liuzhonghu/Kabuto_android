@@ -5,8 +5,9 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class ConfigItem implements Serializable {
-  private static final long serialVersionUID = -7064445428056325255L;
 
+
+  private static final long serialVersionUID = 856589664475313473L;
   @SerializedName("id")
   private int id;
   @SerializedName("type")
