@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="AppTheme" parent="android:Theme.Material.Wallpaper.NoTitleBar">
+    <item name="android:statusBarColor">@android:color/transparent</item>
+    <item name="android:navigationBarColor">@android:color/transparent</item>
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowTranslucentNavigation">false</item>
+    <!--<item name="android:activityOpenEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:activityOpenExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:fragmentOpenEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:fragmentOpenExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:fragmentCloseEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:fragmentCloseExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:taskOpenEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:taskOpenExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:taskCloseEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:taskCloseExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:taskToFrontEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:taskToFrontExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:taskToBackEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:taskToBackExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:windowEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:windowExitAnimation">@anim/slide_out_right</item>-->
+  </style>
+  <style name="MainTheme" parent="android:Theme.Material.Wallpaper.NoTitleBar">
+    <item name="android:statusBarColor">@android:color/white</item>
+    <item name="android:navigationBarColor">@android:color/transparent</item>
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowTranslucentNavigation">false</item>
+    <!--<item name="android:activityOpenEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:activityOpenExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:fragmentOpenEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:fragmentOpenExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:fragmentCloseEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:fragmentCloseExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:taskOpenEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:taskOpenExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:taskCloseEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:taskCloseExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:taskToFrontEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:taskToFrontExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:taskToBackEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:taskToBackExitAnimation">@anim/slide_out_right</item>-->
+    <!--<item name="android:windowEnterAnimation">@anim/slide_in_left</item>-->
+    <!--<item name="android:windowExitAnimation">@anim/slide_out_right</item>-->
+  </style>
+</resources>

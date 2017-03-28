@@ -106,4 +106,6 @@ dependencies {
     compile 'com.facebook.fresco:animated-gif:0.11.0'
     compile 'com.facebook.fresco:imagepipeline-okhttp3:0.11.0'
     compile 'com.facebook.fresco:webpsupport:0.11.0'
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    compile files('libs/disklrucache-2.0.2.jar')
 }

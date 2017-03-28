@@ -4,4 +4,7 @@
     <dimen name="tab_size">14dp</dimen>
     <dimen name="loading_header_height">80dp</dimen>
     <dimen name="loading_header_gif_width">50dp</dimen>
+
+    <dimen name="small_profile_corner">10dp</dimen>
+    <dimen name="common_botton_stroke_width">1.4dp</dimen>
 </resources>

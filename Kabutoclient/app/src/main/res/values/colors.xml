@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="status_main_pink">#a81a17</color>
+    <color name="top_winner_btn_bg">#c90815</color>
+    <color name="start_enter_room">#ff2d77</color>
+    <color name="first_enter_room">#fff600</color>
+    <color name="second_enter_room">#3dfbe2</color>
+    <color name="end_enter_room">#d929ff</color>
+    <color name="opacity_9_main_pink">#e6EF2D47</color>
+    <color name="dark_pink">#b32b39</color>
+    <color name="inner_pink">#DF3A3E</color>
+    <color name="yellow">#FFF600</color>
+    <color name="opacity_3_yellow">#4dFFF600</color>
+    <color name="opacity_8_yellow">#ccFFF600</color>
+    <color name="opacity_9_yellow">#d2FFF600</color>
+    <color name="opacity_8_coppery">#ccddb0a2</color>
+    <color name="yellow_505">#FFE505</color>
+    <color name="green">#1EEA70</color>
+    <color name="opacity_green">#d91EEA70</color>
+    <color name="opacity_1_white">#1affffff</color>
+    <color name="opacity_3_white">#4dffffff</color>
+    <color name="opacity_3_5_white">#59ffffff</color>
+    <color name="opacity_5_white">#80ffffff</color>
+    <color name="opacity_2_white">#33ffffff</color>
+    <color name="opacity_6_5_white">#a6ffffff</color>
+    <color name="opacity_7_5_white">#bfffffff</color>
+    <color name="opacity_7_white">#b3ffffff</color>
+    <color name="opacity_8_white">#ccffffff</color>
+    <color name="opacity_8_blue">#cc6844d3</color>
+    <color name="opacity_9_white">#e6ffffff</color>
+    <color name="opacity_9_5_white">#F2ffffff</color>
+    <color name="opacity_2_blue">#3315bdf4</color>
+    <color name="orange_500">#ff5722</color>
+    <color name="medium_5_gray">#80DDDDDD</color>
+    <color name="opacity_9_blue">#d215bdf4</color>
+    <color name="main_blue">#15bdf4</color>
+    <color name="blue">#19bbf7</color>
+    <color name="sea_blue">#00a0e9</color>
+    <color name="live_chat_color_8">#ff69d6</color>
+    <color name="live_chat_color_9">#ff8000</color>
+    <color name="dice_his_da_item_color">#ffe505</color>
+    <color name="dice_his_xiao_item_color">#00fcff</color>
+    <color name="winner_list_item_bgcolor">#210688</color>
+    <color name="winner_list_header_bgcolor">#231286</color>
+    <color name="main_gray">#eff0f1</color>
+
+    <color name="translucent">#00000000</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="translucent">#00000000</color>
     <color name="white">#FFFFFF</color>
     <color name="white_gray">#F1F1F1</color>
     <color name="light_gray">#E7E7E7</color>
@@ -41,4 +84,6 @@
     <color name="red">#ff0000</color>
     <color name="opacity_8_main_pink">#ccf51900</color>
     <color name="opacity_7_main_pink">#b2f51900</color>
+
+    <color name="home_titlebar_color">#D9333333</color>
 </resources>
